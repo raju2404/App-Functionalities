@@ -8,43 +8,74 @@
     tools:context=".Register">
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/Username"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="89dp"
-        android:layout_marginLeft="89dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="168dp"
+        android:background="#11000000"
         android:ems="10"
+        android:hint="Username"
+        android:drawableLeft="@drawable/ic_action_user"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:textColorHint="#E3F1F0"
+        android:textColor="#ECD6D6" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/TypePassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="89dp"
-        android:layout_marginLeft="89dp"
-        android:layout_marginTop="302dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="250dp"
+
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_action_password"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="#ECD6D6"
+        android:textColorHint="#E3F1F0" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/RetypePassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginLeft="98dp"
-        android:layout_marginBottom="265dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginBottom="229dp"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_action_password"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Retype-Password"
+        android:inputType="textPassword"
+        android:textColor="#ECD6D6"
+        android:textColorHint="#E3F1F0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="100dp"
+        android:layout_centerInParent="true"
+
+        android:text="Register" />
 </RelativeLayout>
