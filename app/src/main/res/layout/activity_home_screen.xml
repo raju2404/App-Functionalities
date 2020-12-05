@@ -4,29 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".HomeScreen">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_width="174dp"
+        android:layout_height="59dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Hello! welcome Home"
+        android:layout_marginTop="10dp"
+        android:text="Hello!"
         android:textSize="30sp"
+        android:textColor="#E3F1F0"
         tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="234dp" />
+        tools:layout_editor_absoluteY="234dp"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="300dp"
+        android:layout_width="181dp"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="171dp"
-
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginRight="-16dp"
+        android:textColor="#E3F1F0"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="136dp"
         tools:layout_editor_absoluteY="234dp" />
+
+    <Button
+        android:id="@+id/ShoppingList"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="114dp"
+        android:background="#302C2D"
+
+        android:text="Create Your shopping List"
+        android:textColor="#E3F1F0" />
+    <Button
+        android:id="@+id/SearchProducts"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="204dp"
+        android:background="#302C2D"
+        android:text="Search Product Locations"
+        android:textColor="#E3F1F0" />
+    <Button
+        android:id="@+id/SelfBill"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="304dp"
+        android:background="#302C2D"
+        android:text="Scan and Self bill"
+        android:textColor="#E3F1F0" />
+    <Button
+        android:id="@+id/Notify"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="404dp"
+        android:background="#302C2D"
+        android:text="Request for Products"
+        android:textColor="#E3F1F0" />
+    <Button
+        android:id="@+id/Feedback"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="504dp"
+        android:background="#302C2D"
+        android:text="Rate the items Purchased"
+        android:textColor="#E3F1F0" />
 </RelativeLayout>
