@@ -28,6 +28,21 @@ public class HomeScreen extends AppCompatActivity {
         Notify= findViewById(R.id.Notify);
         Feedback= findViewById(R.id.Feedback);
 
+        ShoppingList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, CreateShoppingList.class);
+                startActivity(intent);
+            }
+        });
+
+        SelfBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, SelfBilling.class);
+                startActivity(intent);
+            }
+        });
         Notify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
