@@ -66,7 +66,6 @@ public class SelfBilling extends AppCompatActivity {
             //10.0.2.2
            String url="http://7a053042685e.ngrok.io/Product/" .concat(barcode);
            // String url="http://7a053042685e.ngrok.io/Product/8901012116814" ;
-            //Toast.makeText(SelfBilling.this, url, Toast.LENGTH_SHORT).show();
             //String url="http://127.0.0.1:5000/emp/1" ;
 
             new AsyncHttpClient().get(url, new JsonHttpResponseHandler() {
