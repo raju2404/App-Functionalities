@@ -31,7 +31,7 @@ public class CreateShoppingList extends AppCompatActivity {
         Addbutton = (Button) findViewById(R.id.AddItems);
         GetValue = (EditText) findViewById(R.id.editText1);
         Clearbutton = (Button) findViewById(R.id.ClearItems);
-
+        //populating listitems
         final List< String > ListElementsArrayList = new ArrayList< String >
                 (Arrays.asList(ListElements));
 

@@ -6,9 +6,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="ListFont" parent="@android:style/Widget.ListView">
-        <item name="android:textColor">#E3F1F0</item>
-        <item name="android:typeface">sans</item>
-    </style>
+
 
 </resources>
