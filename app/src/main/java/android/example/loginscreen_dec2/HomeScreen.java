@@ -36,6 +36,14 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
+
+        SearchProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, SearchProductLocations.class);
+                startActivity(intent);
+            }
+        });
         SelfBill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
