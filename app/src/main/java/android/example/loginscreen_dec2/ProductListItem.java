@@ -7,6 +7,7 @@ public class ProductListItem {
     private int price;
 
 
+
     public ProductListItem(String productname, int price) {
         this.productname=productname;
         this.price=price;

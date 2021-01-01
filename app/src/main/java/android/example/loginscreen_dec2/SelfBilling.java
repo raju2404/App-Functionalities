@@ -42,13 +42,18 @@ public class SelfBilling extends AppCompatActivity {
         ScanProduct = findViewById(R.id.Scan);
 
         textview = findViewById(R.id.Displaytext);
+
+
     }
 
     public void ScanCode(View view) {
+
         scannerView = new ZXingScannerView(this);
         scannerView.setResultHandler(new ZXingScannerResultHandler());
         setContentView(scannerView);
         scannerView.startCamera();
+
+
     }
 
     @Override
@@ -60,6 +65,8 @@ public class SelfBilling extends AppCompatActivity {
     class ZXingScannerResultHandler implements ZXingScannerView.ResultHandler {
         @Override
         public void handleResult(com.google.zxing.Result result) {
+
+
             String resultCode = result.getText().toString();
             //BigInteger numBig = new BigInteger(resultCode);
 
@@ -69,7 +76,8 @@ public class SelfBilling extends AppCompatActivity {
             scannerView.stopCamera();
 
             startActivity(new Intent(SelfBilling.this,ScannedResult.class)
-                    .putExtra( "resultcode", resultCode ));
+
+                    .putExtra("resultcode",resultCode));
 
         }
     }

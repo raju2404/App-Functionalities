@@ -15,12 +15,49 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/recyclerview"
         android:padding="4dp"
         android:scrollbars="vertical"
         >
     </androidx.recyclerview.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Backbutton"
+            android:text="Back To Scan Products"
+            android:textColor="#E3F1F0"
+            android:background="#302C2D"
+            />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AddtoCart"
+        android:text="ADD TO CART"
+        android:textColor="#E3F1F0"
+        android:background="#302C2D"
+        android:layout_marginLeft="20dp"/>
+
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ViewCart"
+        android:text="VIEW CART"
+        android:textColor="#E3F1F0"
+        android:background="#302C2D"
+        android:layout_marginLeft="20dp"/>
+        />
+    </LinearLayout>
+
+
+
 
 
 

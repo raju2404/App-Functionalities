@@ -1,9 +1,14 @@
 package android.example.loginscreen_dec2;
 
 import android.content.Context;
+import android.content.Intent;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class ProductScanAdapter  extends RecyclerView.Adapter<ProductScanAdapter.ViewHolder>{
+
 
     private List<ProductListItem> listItems;
     private Context context;
@@ -31,10 +37,27 @@ public class ProductScanAdapter  extends RecyclerView.Adapter<ProductScanAdapter
 
     @Override
     public void onBindViewHolder(@NonNull ProductScanAdapter.ViewHolder holder, int position) {
-        ProductListItem listItem = listItems.get(position);
+         final ProductListItem listItem = listItems.get(position);
 
         holder.txtProduct.setText(listItem.getProductname());
         holder.txtprice.setText("Price : " + listItem.getprice());
+
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String pname=listItem.getProductname() ;
+                //String price = listItem.getprice();
+
+
+                Intent intent=new Intent(v.getContext(),ScannedResult.class)
+                        .putExtra("ProductName",pname)
+                        .putExtra("Price",listItem.getprice());
+                v.getContext().startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
@@ -46,12 +69,17 @@ public class ProductScanAdapter  extends RecyclerView.Adapter<ProductScanAdapter
 
         public TextView txtProduct;
         public TextView txtprice;
+        public LinearLayout linearLayout;
+        //public EditText txtQuantity;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txtProduct = (TextView) itemView.findViewById(R.id.txtProduct);
             txtprice = (TextView) itemView.findViewById(R.id.txtPrice);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.linearLayout);
+            //txtQuantity = (EditText) itemView.findViewById(R.id.txtQuantity);
+
         }
     }
 }

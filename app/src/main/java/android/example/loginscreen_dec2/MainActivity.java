@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(new Intent(MainActivity.this,HomeScreen.class)
                             .putExtra( "name", name ));
 
+
                         }
                         }
                     }).start();

@@ -19,8 +19,11 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         tname = findViewById(R.id.name);
-        final String name=getIntent().getStringExtra("name");
+        final  String name=getIntent().getStringExtra("name");
         tname.setText(name);
+
+        GlobalClass globalClass = (GlobalClass) getApplicationContext();
+        globalClass.setUserID(name);
 
         ShoppingList = findViewById(R.id.ShoppingList);
         SearchProducts = findViewById(R.id.SearchProducts);
@@ -48,6 +51,7 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeScreen.this, SelfBilling.class);
+
                 startActivity(intent);
             }
         });
