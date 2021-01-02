@@ -26,7 +26,7 @@ import java.util.List;
 
 public class SearchProductLocations extends AppCompatActivity {
 
-    private static final String url= "http://5ddc3df3db88.ngrok.io/Product";
+    private static final String url= "http://cd5473ae11c5.ngrok.io/Product";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 

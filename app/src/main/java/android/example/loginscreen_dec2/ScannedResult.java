@@ -63,8 +63,8 @@ public class ScannedResult extends AppCompatActivity  {
             Toast.makeText(ScannedResult.this,String.valueOf(pricedisplay), Toast.LENGTH_LONG).show();
             //String tempvar= txtQuantity.getText().toString();
             //int Quantity = Integer.parseInt(tempvar);
-            int Quantity = 100;
-            final int purchased = 0;
+            int Quantity = 1;
+            final int purchased = 1;
             if(productnamedisplay!=null && pricedisplay!=0) {
                 AddProducttoCart(UserIDName, productnamedisplay, Quantity, pricedisplay,purchased );
             }
@@ -79,6 +79,13 @@ public class ScannedResult extends AppCompatActivity  {
         Backbutton = findViewById(R.id.Backbutton);
         AddtoCart = findViewById(R.id.AddtoCart);
         ViewCart = findViewById(R.id.ViewCart);
+        ViewCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ScannedResult.this,ViewCart.class);
+                startActivity(intent);
+            }
+        });
         scanresulttext = findViewById(R.id.scanresulttext);
         final String resultcode=getIntent().getStringExtra("resultcode");
         scanresulttext.setText(UserIDName);
@@ -99,7 +106,7 @@ public class ScannedResult extends AppCompatActivity  {
         try{
 
             requestQueue = Volley.newRequestQueue(getApplicationContext());
-            String URL="http://cd5473ae11c5.ngrok.io/addProduct";
+            String URL="http://9dcad8f29c43.ngrok.io/addProduct";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("Username", Username);
             jsonBody.put("Productname", Productname);
@@ -113,6 +120,8 @@ public class ScannedResult extends AppCompatActivity  {
                         public void onResponse(String response) {
                             Log.i("VOLLEY", response);
                             Toast.makeText(ScannedResult.this, "Product added to Cart successfully", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(ScannedResult.this, ViewCart.class);
+                            startActivity(intent);
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -162,7 +171,7 @@ public class ScannedResult extends AppCompatActivity  {
     private void loadRecyclerviewData(String resultcode) {
         //String resultcode="8901058138054";
 
-        String url= "http://cd5473ae11c5.ngrok.io/Product/" .concat(resultcode);
+        String url= "http://9dcad8f29c43.ngrok.io/Product/" .concat(resultcode);
         //Toast.makeText(ScannedResult.this, url, Toast.LENGTH_SHORT).show();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
