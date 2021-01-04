@@ -14,7 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewCart" android:noHistory="true"></activity>
+        <activity android:name=".RatetheProducts"></activity>
+        <activity android:name=".Payment" />
+        <activity
+            android:name=".ViewCart"
+            android:noHistory="true" />
         <activity android:name=".ScannedResult" />
         <activity android:name=".SearchProductLocations" />
         <activity android:name=".SelfBilling" />

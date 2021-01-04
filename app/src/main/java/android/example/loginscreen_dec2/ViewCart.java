@@ -5,8 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,11 +35,14 @@ import java.util.List;
 
 public class ViewCart extends AppCompatActivity {
 
-    private static final String url= "http://9dcad8f29c43.ngrok.io/getCartItems";
+    GlobalClass globalClass = (GlobalClass) getApplicationContext();
+    final String UserIDName= globalClass.getUserID();
+    private static final String url= "http://0d072908fa21.ngrok.io/getCartItems" ;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     TextView txtTotalamount;
     private RequestQueue requestQueue;
+    Button btn_checkout;
 
     // private CartItemsAdapter adapter;
 
@@ -49,12 +55,21 @@ public class ViewCart extends AppCompatActivity {
         setContentView(R.layout.activity_view_cart);
 
         txtTotalamount= findViewById(R.id.txtTotalamount);
+        btn_checkout = findViewById(R.id.btn_checkout);
         int rowid=getIntent().getIntExtra("row_id",0);
         Toast.makeText(ViewCart.this,String.valueOf(rowid), Toast.LENGTH_LONG).show();
         int Qty=getIntent().getIntExtra("Quantity",0);
         Toast.makeText(ViewCart.this,String.valueOf(Qty), Toast.LENGTH_LONG).show();
         String purchased=getIntent().getStringExtra("purchased");
         Toast.makeText(ViewCart.this,purchased, Toast.LENGTH_LONG).show();
+        btn_checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewCart.this, Payment.class)
+                        .putExtra("Totalamount", txtTotalamount.getText().toString());
+                startActivity(intent);
+            }
+        });
         if(rowid != 0 && purchased!="1"){
             DeleteCartItem(rowid,purchased);
         }
@@ -77,7 +92,7 @@ public class ViewCart extends AppCompatActivity {
     private void DeleteCartItem(int row_id, String purchased) {
         try{
             requestQueue = Volley.newRequestQueue(getApplicationContext());
-            String updateURL="http://9dcad8f29c43.ngrok.io/updatePurchased";
+            String updateURL="http://0d072908fa21.ngrok.io/updatePurchased";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("row_id", row_id);
             jsonBody.put("purchased", purchased);
@@ -136,7 +151,7 @@ public class ViewCart extends AppCompatActivity {
     private void UpdatecartItem(int row_id, int Quantity) {
         try{
             requestQueue = Volley.newRequestQueue(getApplicationContext());
-            String updateURL="http://9dcad8f29c43.ngrok.io/updateQty";
+            String updateURL="http://0d072908fa21.ngrok.io/updateQty";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("row_id", row_id);
             jsonBody.put("Quantity", Quantity);
@@ -193,6 +208,7 @@ public class ViewCart extends AppCompatActivity {
         final ProgressDialog progressDialog = new ProgressDialog(ViewCart.this);
         progressDialog.setMessage("Loading Data...");
         progressDialog.show();
+        //String urlnew = url .concat(UserIDName);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -219,7 +235,7 @@ public class ViewCart extends AppCompatActivity {
 
                                     total = total + (listitems.get(k).getprice() * listitems.get(k).getQuantity() );
                                 }
-                                txtTotalamount.setText(String.valueOf( total));
+                                txtTotalamount.setText( String.valueOf( total));
 
                             }
 

@@ -106,7 +106,7 @@ public class ScannedResult extends AppCompatActivity  {
         try{
 
             requestQueue = Volley.newRequestQueue(getApplicationContext());
-            String URL="http://9dcad8f29c43.ngrok.io/addProduct";
+            String URL="http://0d072908fa21.ngrok.io/addProduct";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("Username", Username);
             jsonBody.put("Productname", Productname);
@@ -171,7 +171,7 @@ public class ScannedResult extends AppCompatActivity  {
     private void loadRecyclerviewData(String resultcode) {
         //String resultcode="8901058138054";
 
-        String url= "http://9dcad8f29c43.ngrok.io/Product/" .concat(resultcode);
+        String url= "http://0d072908fa21.ngrok.io/Product/" .concat(resultcode);
         //Toast.makeText(ScannedResult.this, url, Toast.LENGTH_SHORT).show();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
