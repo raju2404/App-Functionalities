@@ -33,7 +33,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         ListItem listItem = listItems.get(position);
 
         holder.txtProduct.setText(listItem.getProductname());
-        holder.txtLocation.setText(listItem.getLocation());
+        holder.txtLocation.setText("Location : " + listItem.getLocation());
     }
 
     @Override

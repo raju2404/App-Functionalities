@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,14 +36,26 @@ public class SelfBilling extends AppCompatActivity {
     Button ScanProduct;
     private ZXingScannerView scannerView;
     TextView textview;
+    ImageView img_viewcart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_self_billing);
         ScanProduct = findViewById(R.id.Scan);
 
         textview = findViewById(R.id.Displaytext);
+        img_viewcart = findViewById(R.id.img_viewcart);
+        img_viewcart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(SelfBilling.this,ViewCart.class);
+                //startActivity(intent);
+            }
+        });
 
 
     }

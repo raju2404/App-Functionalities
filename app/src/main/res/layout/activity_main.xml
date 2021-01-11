@@ -22,7 +22,9 @@
         android:layout_marginTop="63dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
-        app:srcCompat="@drawable/myretail" />
+        app:srcCompat="@drawable/mybasketpal" />
+    
+
 
     <EditText
         android:id="@+id/UserName"
@@ -76,8 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Login"
-                android:textSize="25sp"
+                android:text="LOGIN"
+                android:textSize="20sp"
                 android:textColor="#E3F1F0"/>
 
         </RelativeLayout>
@@ -91,8 +93,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="73dp"
-        android:text="Register Here"
+        android:text="New User ? REGISTER Here"
         android:textColor="#EFE3E3"
+
         android:textSize="20sp"
         />
 </RelativeLayout>

@@ -13,9 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Search here"
+        android:hint="Search products"
         android:textColorHint="#E3F1F0"
         android:textColor="#E3F1F0"
+        android:textSize="20dp"
         />
 
     <androidx.recyclerview.widget.RecyclerView

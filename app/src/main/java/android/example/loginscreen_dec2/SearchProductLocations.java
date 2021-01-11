@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.android.volley.Request;
@@ -26,7 +27,7 @@ import java.util.List;
 
 public class SearchProductLocations extends AppCompatActivity {
 
-    private static final String url= "http://cd5473ae11c5.ngrok.io/Product";
+    private static final String url= "https://scanifyapi.herokuapp.com/Product";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
@@ -38,6 +39,9 @@ public class SearchProductLocations extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_search_product_locations);
         searchtext=findViewById(R.id.Searchtext);
         searchtext.addTextChangedListener(new TextWatcher() {

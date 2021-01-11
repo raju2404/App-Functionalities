@@ -28,7 +28,7 @@
         android:layout_marginTop="20dp"
         android:id="@+id/upi_id"
         android:layout_below="@+id/amount_tv"
-        android:text="chiraggsam@okaxis"
+
         android:textColor="#E3F1F0"/>
 
     <EditText

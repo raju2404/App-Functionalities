@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,6 +28,9 @@ public class Payment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_payment);
 
         name = (EditText) findViewById(R.id.name);
@@ -44,7 +48,6 @@ public class Payment extends AppCompatActivity {
                 String upiId = upi_id.getText().toString();
                 String note_text = note.getText().toString();
                 String name_text = name.getText().toString();
-
                 payUsingUpi(amount, upiId, name_text, note_text);
             }
         });
@@ -133,6 +136,7 @@ public class Payment extends AppCompatActivity {
                 //Code to handle successful transaction here.
                 Toast.makeText(Payment.this, "Transaction successful.", Toast.LENGTH_SHORT).show();
                 Log.d("UPI", "responseStr: "+approvalRefNo);
+
             }
             else if("Payment cancelled by user.".equals(paymentCancel)) {
                 Toast.makeText(Payment.this, "Payment cancelled by user.", Toast.LENGTH_SHORT).show();

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ViewCart"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gradient">
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="0dip"
@@ -34,15 +35,16 @@
                 android:layout_height="wrap_content"
                 android:text="Total payable amount : "
                 android:textSize="20dp"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="#E3F1F0"/>
     <TextView
         android:id="@+id/txtTotalamount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HELLO WORLD"
+        android:text="CART EMPTY"
         android:textSize="20dp"
+        android:textColor="#E3F1F0"
         android:layout_marginLeft="20dp"
-        android:textColor="@color/colorPrimaryDark"/>
+        />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

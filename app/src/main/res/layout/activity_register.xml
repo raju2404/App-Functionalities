@@ -36,7 +36,6 @@
         android:layout_marginStart="86dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="250dp"
-
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_password"
         android:ems="10"
@@ -55,7 +54,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
-        android:layout_marginBottom="229dp"
+        android:layout_marginBottom="300dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_password"
         android:ems="10"
@@ -67,7 +66,7 @@
     <Button
         android:id="@+id/Register"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
@@ -76,6 +75,8 @@
         android:layout_marginLeft="100dp"
         android:layout_marginBottom="100dp"
         android:layout_centerInParent="true"
-
-        android:text="Register" />
+        android:background="#272623"
+        android:textColor="#E3F1F0"
+        android:text="REGISTER"
+        android:textStyle="bold"/>
 </RelativeLayout>

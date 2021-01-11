@@ -10,6 +10,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -49,6 +50,9 @@ public class ScannedResult extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_scanned_result);
         GlobalClass globalClass = (GlobalClass) getApplicationContext();
         final String UserIDName= globalClass.getUserID();
@@ -56,11 +60,9 @@ public class ScannedResult extends AppCompatActivity  {
         try {
 
             String productnamedisplay = getIntent().getStringExtra("ProductName");
-            Toast.makeText(ScannedResult.this, productnamedisplay, Toast.LENGTH_LONG).show();
-            //String pricedisplay = getIntent().getExtras().get("Price").toString();
-           // int pricedisplay = (int) getIntent().getExtras().get("Price");
-           int pricedisplay=getIntent().getIntExtra("Price",0);
-            Toast.makeText(ScannedResult.this,String.valueOf(pricedisplay), Toast.LENGTH_LONG).show();
+           // Toast.makeText(ScannedResult.this, productnamedisplay, Toast.LENGTH_LONG).show();
+            int pricedisplay=getIntent().getIntExtra("Price",0);
+            //Toast.makeText(ScannedResult.this,String.valueOf(pricedisplay), Toast.LENGTH_LONG).show();
             //String tempvar= txtQuantity.getText().toString();
             //int Quantity = Integer.parseInt(tempvar);
             int Quantity = 1;
@@ -77,7 +79,14 @@ public class ScannedResult extends AppCompatActivity  {
 
         //txtQuantity= findViewById(R.id.txtQuantity);
         Backbutton = findViewById(R.id.Backbutton);
-        AddtoCart = findViewById(R.id.AddtoCart);
+        Backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(ScannedResult.this,SelfBilling.class);
+                //startActivity(intent);
+            }
+        });
+       // AddtoCart = findViewById(R.id.AddtoCart);
         ViewCart = findViewById(R.id.ViewCart);
         ViewCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +115,7 @@ public class ScannedResult extends AppCompatActivity  {
         try{
 
             requestQueue = Volley.newRequestQueue(getApplicationContext());
-            String URL="http://0d072908fa21.ngrok.io/addProduct";
+            String URL="https://scanifyapi.herokuapp.com/addProduct";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("Username", Username);
             jsonBody.put("Productname", Productname);
@@ -171,7 +180,7 @@ public class ScannedResult extends AppCompatActivity  {
     private void loadRecyclerviewData(String resultcode) {
         //String resultcode="8901058138054";
 
-        String url= "http://0d072908fa21.ngrok.io/Product/" .concat(resultcode);
+        String url= "https://scanifyapi.herokuapp.com/Product/" .concat(resultcode);
         //Toast.makeText(ScannedResult.this, url, Toast.LENGTH_SHORT).show();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {

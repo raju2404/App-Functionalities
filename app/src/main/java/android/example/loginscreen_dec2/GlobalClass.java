@@ -4,7 +4,7 @@ import android.app.Application;
 
 public class GlobalClass extends Application {
 
-    private String UserID;
+    public static String UserID;
 
     public String getUserID() {
         return UserID;
