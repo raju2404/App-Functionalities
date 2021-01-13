@@ -38,7 +38,7 @@ import java.util.List;
 public class ScannedResult extends AppCompatActivity  {
     private RequestQueue requestQueue;
     TextView scanresulttext;
-    Button Backbutton,AddtoCart,ViewCart;
+    Button ViewCart;
     // private static final String url= "http://10.0.2.2:5000/Product";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -78,14 +78,8 @@ public class ScannedResult extends AppCompatActivity  {
         //AddProducttoCart(UserIDName, prodcutnamedisplay, Quantity, pricedisplay,purchased );
 
         //txtQuantity= findViewById(R.id.txtQuantity);
-        Backbutton = findViewById(R.id.Backbutton);
-        Backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(ScannedResult.this,SelfBilling.class);
-                //startActivity(intent);
-            }
-        });
+        //Backbutton = findViewById(R.id.Backbutton);
+
        // AddtoCart = findViewById(R.id.AddtoCart);
         ViewCart = findViewById(R.id.ViewCart);
         ViewCart.setOnClickListener(new View.OnClickListener() {

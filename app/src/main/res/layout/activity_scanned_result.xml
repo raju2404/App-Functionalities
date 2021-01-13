@@ -27,14 +27,7 @@
         android:orientation="horizontal">
 
 
-        <Button
-            android:id="@+id/Backbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#302C2D"
-            android:text="Back To Scan Products"
-            android:layout_marginLeft="30dp"
-            android:textColor="#E3F1F0" />
+
 
         <Button
         android:layout_width="wrap_content"

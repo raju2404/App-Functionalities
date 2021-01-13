@@ -88,12 +88,8 @@ public class ViewCart extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
         listitems = new ArrayList<>();
         loadRecyclerviewData(UserIDName);
-
-
 
     }
 
