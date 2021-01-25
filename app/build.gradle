@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "android.example.loginscreen_dec2"
+        applicationId "com.basketpal.loginscreen_dec2"
         minSdkVersion 15
         targetSdkVersion 30
         versionCode 1
