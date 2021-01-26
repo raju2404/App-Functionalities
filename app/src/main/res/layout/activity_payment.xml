@@ -58,7 +58,6 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-
         android:id="@+id/send"
         android:layout_below="@+id/note"
         android:layout_marginTop="20dp"
@@ -66,6 +65,17 @@
         android:textColor="#E3F1F0"
         android:background="#302C2D"
         android:text="send by upi"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Exitpass"
+        android:layout_below="@+id/send"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#E3F1F0"
+        android:background="#302C2D"
+        android:text="Create Exit pass"/>
 
 
 </RelativeLayout>

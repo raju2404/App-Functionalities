@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -22,8 +24,9 @@ public class Payment extends AppCompatActivity {
 
     TextView amount_tv,upi_id;
     EditText name,note;
-    Button send;
+    Button send,Exitpass;
     final int UPI_PAYMENT = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,16 @@ public class Payment extends AppCompatActivity {
         name = (EditText) findViewById(R.id.name);
         note = (EditText) findViewById(R.id.note);
         send = (Button) findViewById(R.id.send);
+        Exitpass = (Button) findViewById(R.id.Exitpass) ;
+        //Exitpass.setEnabled(false);
+        //Exitpass.getBackground().setColorFilter(Color.LTGRAY, PorterDuff.Mode.MULTIPLY);
+        Exitpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Payment.this, ExitPass.class);
+                startActivity(intent);
+            }
+        });
         amount_tv = findViewById(R.id.amount_tv);
         amount_tv.setText(getIntent().getStringExtra("Totalamount"));
 
@@ -136,6 +149,8 @@ public class Payment extends AppCompatActivity {
             if (status.equals("success")) {
                 //Code to handle successful transaction here.
                 Toast.makeText(Payment.this, "Transaction successful.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Payment.this, approvalRefNo, Toast.LENGTH_SHORT).show();
+                //Exitpass.setEnabled(true);
                 Log.d("UPI", "responseStr: "+approvalRefNo);
 
             }

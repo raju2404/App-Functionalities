@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RatetheProducts"></activity>
+        <activity android:name=".ExitPass"></activity>
+        <activity android:name=".RatetheProducts" />
         <activity android:name=".Payment" />
         <activity
             android:name=".ViewCart"
