@@ -34,9 +34,9 @@ public class InvoiceItemAdapter extends RecyclerView.Adapter<InvoiceItemAdapter.
 
         //holder.txtrowid.setText(String.valueOf(listItem.getRow_id()) );
         holder.product_tv.setText(String.valueOf(listItem.getProductname() ));
-        holder.Quantity_tv.setText(String.valueOf(listItem.getQuantity() ));
-        holder.price_tv.setText(String.valueOf(listItem.getprice() * listItem.getQuantity() ));
-        holder.Invoice_tv.setText(String.valueOf(listItem.getInvoiceNumber() ));
+        holder.Quantity_tv.setText("Quantity :" + String.valueOf(listItem.getQuantity() ));
+        holder.price_tv.setText("Total Price :" + String.valueOf(listItem.getprice() * listItem.getQuantity() ));
+        holder.Invoice_tv.setText( "Invoice Number : " + String.valueOf(listItem.getInvoiceNumber() ));
     }
 
     @Override

@@ -7,6 +7,26 @@
     android:background="@drawable/gradient"
     android:orientation="vertical"
     tools:context=".ExitPass">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="UPI ID"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/countofitems"
+        android:textSize="30dp"
+        android:textColor="#E3F1F0"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="UPI ID"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Billnumber"
+        android:textSize="30dp"
+        android:textColor="#E3F1F0"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

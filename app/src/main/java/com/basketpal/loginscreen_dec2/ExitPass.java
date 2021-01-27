@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -34,7 +35,7 @@ public class ExitPass extends AppCompatActivity {
     private static final String url= "https://scanifyapi.herokuapp.com/getRatingItems/" ;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-
+    TextView Itemscount,Billnumber;
     private List<InvoiceItem> listitems;
 
     @Override
@@ -54,6 +55,8 @@ public class ExitPass extends AppCompatActivity {
         int paid =1 ;
         CreateInvoice(UserIDName, paid );
         loadRecyclerviewData(UserIDName);
+        Itemscount = (TextView) findViewById(R.id.countofitems);
+        Billnumber = (TextView) findViewById(R.id.Billnumber);
     }
 
     private void loadRecyclerviewData(String UserIDName) {
@@ -80,6 +83,8 @@ public class ExitPass extends AppCompatActivity {
                                         o.getInt("InvoiceNumber")
                                 );
                                 listitems.add(item);
+                                Itemscount.setText( "Number of Items purchased : " + String.valueOf( listitems.size()));
+                                Billnumber.setText("Invoice number : " + String.valueOf(item.getInvoiceNumber() ) ) ;
                             }
                             adapter = new InvoiceItemAdapter(listitems, getApplicationContext());
                             recyclerView.setAdapter(adapter);
