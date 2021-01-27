@@ -35,9 +35,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ViewCart extends AppCompatActivity {
-
-
-
     private static final String url= "https://scanifyapi.herokuapp.com/getCartItems/" ;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
